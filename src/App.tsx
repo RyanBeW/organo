@@ -11,6 +11,7 @@ export interface WorkerProps {
   imageAdress: string
   email: string
   team: string
+  date: string
 }
 function App() {
   const [ workers, setWorkers] = useState<WorkerProps[]>([])

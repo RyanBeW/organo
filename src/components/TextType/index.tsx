@@ -4,8 +4,9 @@ interface TextTypeProps {
   typing: (value: string) => void
   label: string
   value: string
+  type?: "text" | "password" | "date" | "email"
 }
-export function TextType({value,label,typing}: TextTypeProps) {
+export function TextType({value,label,typing,type}: TextTypeProps) {
   const typed = (e:React.ChangeEvent<HTMLInputElement>) => {
     typing(e.target.value)
   }
@@ -15,7 +16,7 @@ export function TextType({value,label,typing}: TextTypeProps) {
       <input 
         value={value}
         onChange={typed}
-        type="text" 
+        type={type}
         required 
         placeholder={`Type your ${label.toLowerCase()} `}
         />
