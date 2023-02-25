@@ -1,0 +1,19 @@
+.text-camp{
+  margin: 24px 0;
+}
+.text-camp label{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  color: #fff;
+}
+.text-camp input{
+  background-color: #3e3e42;
+  color: #fff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  padding: 24px;
+  border-radius:4px
+}
