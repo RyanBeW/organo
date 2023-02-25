@@ -1,15 +1,21 @@
 import { useState } from "react";
 import { Button } from "../Button";
+import { WorkerProps } from "../../App";
 import { List } from "../List";
 import { TextType } from "../TextType";
 import "./index.css"
-export function Form(props) {
+interface FormProps {
+  workerCadastred: (worker: WorkerProps) => void;
+  teams: string[]
+}
+
+export function Form(props:FormProps) {
   const [name,setName] = useState("")
   const [position,setPosition] = useState("")
   const [imageAdress, setImageAdress] = useState("")
   const [email, setEmail] = useState("")
   const [team,setTeam] = useState("")
-    const sendSubmit = (e) => {
+    const sendSubmit = (e:React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       props.workerCadastred({
         name,
@@ -33,7 +39,7 @@ export function Form(props) {
         <TextType label="Image adress" value={imageAdress} typing={value => setImageAdress(value)}/>
         <TextType label="Email adress" value={email} typing={value => setEmail(value)}/>
         <List label="Team" itens={props.teams} value={team} typing={value => setTeam(value)}/> 
-        <Button >
+        <Button>
           Create Card
         </Button>
         

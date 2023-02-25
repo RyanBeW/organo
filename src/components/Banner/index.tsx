@@ -1,9 +1,8 @@
-import banner from "/assets/banner.png"
 import "./index.css"
 export function Banner() {
   return(
     <div className="banner">
-      <img src={banner} alt="" />
+      <img src="/public/assets/banner.png" alt="The principal banner image" />
     </div>    
   )
 }

@@ -3,13 +3,18 @@ import { Banner } from "./components/Banner"
 import { Footer } from "./components/Footer"
 import { Form } from "./components/Form"
 import { Team } from "./components/Team"
-import { TextType } from "./components/TextType"
 import "./index.css"
 
+export interface WorkerProps {
+  name: string
+  position:string
+  imageAdress: string
+  email: string
+  team: string
+}
 function App() {
-  const [ workers, setWorkers] = useState([])
-  const newWorkerAdd = (worker) => {
-    console.log(worker)
+  const [ workers, setWorkers] = useState<WorkerProps[]>([])
+  const newWorkerAdd = (worker:WorkerProps) => {
     setWorkers([...workers,worker])
   }
   const teams = [
